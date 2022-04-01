@@ -133,4 +133,7 @@ app.get("/success-payment", (req, res) => {
 
 
 
-app.listen(3001, () => console.log('Server Started'))
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+      console.log(`Our app is running on port ${ PORT }`);
+  });
