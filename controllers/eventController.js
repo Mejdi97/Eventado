@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 const express = require('express');
-const event = require('../models/event');
+const Event = require('../models/event');
 const User = require('../models/user');
 
 
 exports.getAllEvents = async (req, res) => {
     try {
-        const events = await event.find()
+        const events = await Event.find()
         res.json(events)
     } catch (err) {
         res.status(500).json({ message: err.message })
@@ -17,11 +17,11 @@ exports.createEvent = async (req, res) => {
 
     const { name, date, nbrMax, description, Affiche } = req.body;
 
-    const verifEvent = await event.findOne({ name });
+    const verifEvent = await Event.findOne({ name });
     if (verifEvent) {
         res.status(403).send({ message: "event already exists !" });
     } else {
-        const newEvent = new event();
+        const newEvent = new Event();
         newEvent.name = name;
         newEvent.date = date;
         newEvent.description=description;
@@ -35,7 +35,7 @@ exports.createEvent = async (req, res) => {
 
 
 exports.updateEvent = async (req, res) => {
-    const event = new event({
+    const event = new Event({
       _id: req.params.id,
       ...req.body
     });
