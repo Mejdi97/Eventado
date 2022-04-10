@@ -32,7 +32,13 @@ exports.create = async (req, res) => {
 
 
 exports.getByUser = async (req, res) =>{
-    const event_id =  req.params.event_id;
+    
+    try {
+        const EventRegister = await EventRegister.find({ event_id: req.body.event_id });
+      
+        res.status(200).json(EventRegister);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 }
-
 

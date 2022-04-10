@@ -4,6 +4,8 @@ const eventRegister=require('../controllers/eventRegisterController');
 
   router.post('/', eventRegister.create);
 
-  router.get('/user_id',eventRegister.getByUser);
+
+  //get user's event
+  router.get('/:id',eventRegister.getByUser);
 
   module.exports = router;
