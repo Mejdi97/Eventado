@@ -75,9 +75,9 @@ app.get("/create-charge", async (req, res) => {
   
     const charge = await Charge.create(chargeData);
   
-    console.log(charge);
+    console.log(charge.hosted_url);
   
-    res.send(charge);
+    res.redirect(charge.hosted_url);
   });
 
 
