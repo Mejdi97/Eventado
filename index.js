@@ -77,7 +77,7 @@ app.get("/create-charge", async (req, res) => {
   
     console.log(charge);
   
-    res.send(charge);
+    res.redirect(charge.hosted_url);
   });
 
 
