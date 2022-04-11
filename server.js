@@ -55,13 +55,13 @@ app.use('/eventRegister', EventRegisterRouter)
 
 
 //paiement
-/*
+
 app.get("/create-charge", async (req, res) => {
     const chargeData = {
       name: "om kolthoum",
       description: "concert om kolthoum a theatre de carthage",
       local_price: {
-        amount: 0.2,
+        amount: 2,
         currency: "USD",
       },
       pricing_type: "fixed_price",
@@ -132,5 +132,5 @@ app.get("/success-payment", (req, res) => {
 
 
 
-*/
+
 app.listen(process.env.PORT || 3000, () => console.log('Server Started'))
