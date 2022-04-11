@@ -57,7 +57,7 @@ exports.updateEvent = async (req, res) => {
 
 
   exports.deleteEvent = async (req, res) => {
-    event.deleteOne({_id: req.params.id}).then(
+    Event.deleteOne({_id: req.params.id}).then(
       () => {
         res.status(200).json({
           message: 'Deleted!'
