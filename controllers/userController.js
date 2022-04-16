@@ -14,7 +14,7 @@ exports.getById = async (req, res) => {
     res.status(200).json(User);
     return;
   });
-};
+};   
 
 exports.getByEmail =async (req,res)=>{
   try {
